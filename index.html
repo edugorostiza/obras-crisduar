@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Obras Crisduar</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="apple-mobile-web-app-title" content="Obras Crisduar">
+<meta name="application-name" content="Obras Crisduar">
+<meta name="theme-color" content="#1f242b">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icono-192.png">
+<script>
+  // El portal de obra (requiere iniciar sesión en claude.ai con la cuenta de CRISDUAR).
+  var PORTAL = "https://claude.ai/artifact/QhzeshfsMiUUXoWUgoSxru";
+  // Desde el icono de la pantalla de inicio se abre "?abrir=1": ir directo al portal.
+  if (/[?&]abrir=1/.test(location.search)) { location.replace(PORTAL); }
+</script>
+<style>
+  :root { --bg:#f8f6f1; --fg:#1f242b; --muted:#6b6457; --oro:#9a8762; --tarjeta:#ffffff; --borde:#e4ded2; color-scheme: light; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#1f242b; --fg:#ece6d8; --muted:#a9a293; --oro:#d6c496; --tarjeta:#272d35; --borde:#38404a; color-scheme: dark; } }
+  * { box-sizing: border-box; }
+  body { margin:0; min-height:100vh; background:var(--bg); color:var(--fg);
+         font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+         padding: max(24px, env(safe-area-inset-top)) max(20px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left));
+         display:flex; justify-content:center; }
+  main { width:100%; max-width:440px; display:flex; flex-direction:column; gap:22px; }
+  header { display:flex; align-items:center; gap:14px; }
+  header img { width:56px; height:56px; border-radius:13px; }
+  .marca { letter-spacing:.32em; font-size:13px; color:var(--oro); text-transform:uppercase; }
+  h1 { margin:2px 0 0; font-size:22px; font-weight:600; }
+  .abrir { display:block; text-align:center; text-decoration:none; background:var(--fg); color:var(--bg);
+           padding:15px; border-radius:12px; font-weight:600; font-size:17px; }
+  .abrir:focus-visible { outline:3px solid var(--oro); outline-offset:3px; }
+  section { background:var(--tarjeta); border:1px solid var(--borde); border-radius:14px; padding:18px 18px 8px; }
+  h2 { margin:0 0 8px; font-size:15px; }
+  ol { margin:0; padding-left:20px; }
+  li { margin-bottom:10px; }
+  .nota { color:var(--muted); font-size:13px; margin:0; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <img src="apple-touch-icon.png" alt="">
+    <div><div class="marca">Crisduar</div><h1>Portal de obra</h1></div>
+  </header>
+
+  <a class="abrir" id="abrir" href="https://claude.ai/artifact/QhzeshfsMiUUXoWUgoSxru">Abrir el portal</a>
+
+  <section>
+    <h2>Ponerlo en la pantalla de inicio del iPhone</h2>
+    <ol>
+      <li>Abre esta página en <b>Safari</b>.</li>
+      <li>Pulsa <b>Compartir</b> (el cuadrado con la flecha hacia arriba).</li>
+      <li>Elige <b>Añadir a pantalla de inicio</b> y pulsa <b>Añadir</b>.</li>
+    </ol>
+    <p class="nota">Saldrá el icono de Crisduar. Al tocarlo se abre directamente el portal. En Android: menú ⋮ › Añadir a pantalla de inicio.</p>
+  </section>
+
+  <p class="nota">Necesitas haber iniciado sesión en claude.ai con tu cuenta de Crisduar.</p>
+</main>
+<script>
+  // Al guardar en la pantalla de inicio, el iPhone guarda la dirección actual:
+  // la cambiamos (sin recargar) para que el icono abra el portal directamente.
+  try { history.replaceState(null, "", location.pathname + "?abrir=1"); } catch (e) {}
+</script>
+</body>
+</html>
